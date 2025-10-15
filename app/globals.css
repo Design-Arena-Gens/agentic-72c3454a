@@ -1,0 +1,81 @@
+:root {
+  color-scheme: dark;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html,
+body {
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  background: radial-gradient(circle at top, #0b1a2a 0%, #04070b 70%, #020205 100%);
+  color: #f2f7ff;
+  font-family: "Poppins", "Segoe UI", sans-serif;
+}
+
+main {
+  width: 100%;
+  height: 100%;
+}
+
+.canvas-container {
+  position: relative;
+  width: 100%;
+  height: 100%;
+}
+
+.overlay {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  pointer-events: none;
+  background: linear-gradient(180deg, rgba(6, 17, 32, 0.6) 0%, rgba(6, 17, 32, 0) 50%);
+  padding: 4rem;
+  text-align: center;
+  gap: 1rem;
+}
+
+.overlay h1 {
+  font-size: clamp(2.5rem, 5vw, 4rem);
+  letter-spacing: 0.25rem;
+  text-transform: uppercase;
+  font-weight: 700;
+  text-shadow: 0 10px 40px rgba(12, 25, 46, 0.7);
+}
+
+.overlay p {
+  max-width: min(700px, 70%);
+  font-size: clamp(1rem, 2vw, 1.35rem);
+  color: rgba(229, 238, 255, 0.85);
+  line-height: 1.6;
+}
+
+.overlay::after {
+  content: "";
+  position: absolute;
+  bottom: 2rem;
+  width: 140px;
+  height: 2px;
+  background: linear-gradient(90deg, rgba(217, 245, 255, 0) 0%, rgba(217, 245, 255, 0.8) 50%, rgba(217, 245, 255, 0) 100%);
+  animation: breathe 4s ease-in-out infinite;
+}
+
+@keyframes breathe {
+  0%,
+  100% {
+    transform: scaleX(0.8);
+    opacity: 0.6;
+  }
+  50% {
+    transform: scaleX(1);
+    opacity: 1;
+  }
+}
